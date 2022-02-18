@@ -1,7 +1,7 @@
-const contractName = process.env.REACT_APP_CONTRACT_NAME || 'kaizofighters.tenk.near';
+const contractName = process.env.REACT_APP_CONTRACT_NAME || 'tora.tenk.testnet' ||'kaizofighters.tenk.near';
 
 export default function getConfig() {
-  let config = {
+  const config = {
     networkId: 'testnet',
     nodeUrl: 'https://rpc.testnet.near.org',
     walletUrl: 'https://wallet.testnet.near.org',
@@ -9,39 +9,16 @@ export default function getConfig() {
     contractName,
     GAS: '200000000000000',
     DEFAULT_NEW_ACCOUNT_AMOUNT: '5',
-    contractMethods: {
-      changeMethods: [
-        'nft_mint_one',
-        'nft_mint_many',
-        'create_linkdrop',
-        'nft_transfer',
-      ],
-      viewMethods: [
-        'cost_per_token',
-        'discount',
-        'token_storage_cost',
-        'total_cost',
-        'nft_supply_for_owner',
-        'nft_total_supply',
-        'nft_tokens',
-        'nft_tokens_for_owner',
-        'tokens_left',
-        'cost_of_linkdrop',
-        'nft_metadata',
-        'get_key_balance',
-        'check_key',
-      ],
-    },
   };
 
   // if (process.env.REACT_APP_ENV === 'prod') {
-  config = {
-    ...config,
-    networkId: 'mainnet',
-    nodeUrl: 'https://rpc.mainnet.near.org',
-    walletUrl: 'https://wallet.near.org',
-    helperUrl: 'https://helper.mainnet.near.org',
-  };
+  // config = {
+  //   ...config,
+  //   networkId: 'mainnet',
+  //   nodeUrl: 'https://rpc.mainnet.near.org',
+  //   walletUrl: 'https://wallet.near.org',
+  //   helperUrl: 'https://helper.mainnet.near.org',
+  // };
   // }
 
   return config;
