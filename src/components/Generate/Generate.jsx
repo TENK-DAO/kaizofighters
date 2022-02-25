@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import GenerateSoldOut from './GenerateSoldOut';
-import GenerateBlock from './GenerateBlock';
+// import GenerateBlock from './GenerateBlock';
 import { appStore } from '../../state/app';
 import useBuy from '../../hooks/useBuy';
 
@@ -27,7 +27,8 @@ const Generate = () => {
         </div>
 
         <div className="generate__block">
-          {soldOut ? <GenerateSoldOut /> : <GenerateBlock />}
+          <GenerateSoldOut />
+          {/* soldOut ? <GenerateSoldOut /> : <GenerateBlock /> */}
 
           <picture>
             <source srcSet="./images/kaizo-art-4.webp, ./images/kaizo-art-4.webp" />

@@ -2,9 +2,9 @@ import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { ReactSVG } from 'react-svg';
 import NftList from '../../components/NftList/NftList';
-import NoNfts from '../../components/NoNfts/NoNfts';
+// import NoNfts from '../../components/NoNfts/NoNfts';
 import { appStore } from '../../state/app';
-import Buy from '../../components/Buy';
+import GenerateSoldOut from '../../components/Generate/GenerateSoldOut';
 import backgroundNft from '../../assets/images/nft-background.svg';
 
 const MyNFTS = () => {
@@ -26,10 +26,10 @@ const MyNFTS = () => {
       <div className="my-nfts__data">
         <NftList />
       </div>
-      <Buy soldOut={soldOut} />
+      <GenerateSoldOut soldOut={soldOut} />
     </div>
   ) : (
-    <NoNfts soldOut={soldOut} />
+    <GenerateSoldOut soldOut={soldOut} />
   );
 };
 

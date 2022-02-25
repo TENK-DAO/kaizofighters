@@ -2,8 +2,8 @@ import React, { useEffect, useContext, useState } from 'react';
 import { useHistory } from 'react-router';
 import { ReactSVG } from 'react-svg';
 import { appStore } from '../../state/app';
-import Buy from '../../components/Buy';
-import NoNfts from '../../components/NoNfts/NoNfts';
+import GenerateSoldOut from '../../components/Generate/GenerateSoldOut';
+// import NoNfts from '../../components/NoNfts/NoNfts';
 import background from '../../assets/images/link-drop-background.svg';
 import ShareableLink from './ShareableLink';
 import ShareableInput from './ShareableInput';
@@ -109,10 +109,10 @@ const LinkDrop = () => {
         </div>
       </div>
 
-      <Buy soldOut={app.soldOut} />
+      <GenerateSoldOut soldOut={app.soldOut} />
     </div>
   ) : (
-    <NoNfts soldOut={app.soldOut} />
+    <GenerateSoldOut soldOut={app.soldOut} />
   );
 };
 
